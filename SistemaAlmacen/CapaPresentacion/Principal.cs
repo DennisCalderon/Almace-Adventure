@@ -21,7 +21,7 @@ namespace CapaPresentacion
 
         private void Principal_Load(object sender, EventArgs e)
         {
-            
+            //
         }
 
         private void Principal_FormClosed(object sender, FormClosedEventArgs e)
