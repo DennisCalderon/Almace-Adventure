@@ -27,5 +27,35 @@ namespace CapaNegocio
         {
             usuarios.Insert_Usuarios(descripciontipouser, CuentaUsuario, PasswordUsuario, Convert.ToInt32(DNIUsuario), NombreUsuario, ApellidoUsuario, TelefonoUsuario, CorreoUsuario, DireccionUsuario, ComentarioUsuario);
         }
+        public DataTable MostrarUsuariosTipos()
+        {
+            DataTable tabla = new DataTable();
+            tabla = usuarios.MostrarUsuariosTipos();
+            return tabla;
+        }
+        public List<string> Btn_PU_Ultimo()
+        {
+            List<string> datosUsuarios = new List<string>();
+            datosUsuarios = usuarios.Btn_PU_Ultimo();
+            return datosUsuarios;
+        }
+        public List<string> Btn_PU_Primero()
+        {
+            List<string> datosUsuarios = new List<string>();
+            datosUsuarios = usuarios.Btn_PU_Primero();
+            return datosUsuarios;
+        }
+        public List<string> Btn_PU_Anterior(string IdUsuario)
+        {
+            List<string> datosUsuarios = new List<string>();
+            datosUsuarios = usuarios.Btn_PU_Anterior(Convert.ToInt32(IdUsuario));
+            return datosUsuarios;
+        }
+        public List<string> Btn_PU_Siguiente(string IdUsuario)
+        {
+            List<string> datosUsuarios = new List<string>();
+            datosUsuarios = usuarios.Btn_PU_Siguiente(Convert.ToInt32(IdUsuario));
+            return datosUsuarios;
+        }
     }
 }

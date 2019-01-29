@@ -18,5 +18,11 @@ namespace CapaNegocio
             datosUsuarios = login.ConsultarUser(CuentaUsuario, PasswordUsuario);
             return datosUsuarios;
         }
+        public List<string> ConsultarPermisosUser(string CuentaUsuario)
+        {
+            List<string> PermisosUsuarios = new List<string>();
+            PermisosUsuarios = login.ConsultarPermisosUser(CuentaUsuario);
+            return PermisosUsuarios;
+        }
     }
 }

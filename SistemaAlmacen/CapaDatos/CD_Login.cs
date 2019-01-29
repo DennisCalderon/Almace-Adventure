@@ -39,7 +39,38 @@ namespace CapaDatos
             }
             conexion.CerrarConexion();
             return datosUsuarios;
+        }
+        public List<string> ConsultarPermisosUser(string CuentaUsuario)
+        {
+            List<string> PermisosUsuarios = new List<string>();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "Mostrar_Usuarios_Permisos";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("_CuentaUsuario", CuentaUsuario);
+            leer = comando.ExecuteReader();
 
+            if (leer.Read())
+            {
+                PermisosUsuarios.Add(leer.GetString("IdUsuario"));
+                PermisosUsuarios.Add(leer.GetString("PerProductos"));
+                PermisosUsuarios.Add(leer.GetString("PerIngresos"));
+                PermisosUsuarios.Add(leer.GetString("PerSalidas"));
+                PermisosUsuarios.Add(leer.GetString("PerSolicitudes"));
+                PermisosUsuarios.Add(leer.GetString("PerReportes"));
+                PermisosUsuarios.Add(leer.GetString("PerUsuarios"));
+            }
+            else
+            {
+                PermisosUsuarios.Add("0");
+                PermisosUsuarios.Add("0");
+                PermisosUsuarios.Add("0");
+                PermisosUsuarios.Add("0");
+                PermisosUsuarios.Add("0");
+                PermisosUsuarios.Add("0");
+                PermisosUsuarios.Add("0");
+            }
+            conexion.CerrarConexion();
+            return PermisosUsuarios;
         }
     }
 }

@@ -53,10 +53,8 @@ namespace CapaPresentacion
                 catch (Exception ex)
                 {
                     MessageBox.Show("Datos incorrectos" + ex);
-                }
-                
-            }
-           
+                }                
+            }           
         }
     }
 }

@@ -106,6 +106,7 @@
             this.cboTiposUser.Name = "cboTiposUser";
             this.cboTiposUser.Size = new System.Drawing.Size(100, 21);
             this.cboTiposUser.TabIndex = 63;
+            this.cboTiposUser.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cboTiposUser_MouseClick);
             // 
             // txtCorreo
             // 

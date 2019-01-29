@@ -69,5 +69,117 @@ namespace CapaDatos
 
             comando.Parameters.Clear();
         }
+        public DataTable MostrarUsuariosTipos()
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "Mostrar_Usuarios_Tipos";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            conexion.CerrarConexion();
+            return tabla;
+        }
+        public List<string> Btn_PU_Ultimo()
+        {
+            List<string> datos = new List<string>();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "Btn_PU_Ultimo";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+
+            if (leer.Read())
+            {
+                datos.Add(leer.GetString("IdUsuario"));
+                datos.Add(leer.GetString("DescripcionTipoUser"));
+                datos.Add(leer.GetString("CuentaUsuario"));
+                datos.Add(leer.GetString("NombreUsuario"));
+                datos.Add(leer.GetString("ApellidoUsuario"));
+                datos.Add(leer.GetString("PerProductos"));
+                datos.Add(leer.GetString("PerIngresos"));
+                datos.Add(leer.GetString("PerSalidas"));
+                datos.Add(leer.GetString("PerSolicitudes"));
+                datos.Add(leer.GetString("PerReportes"));
+                datos.Add(leer.GetString("PerUsuarios"));
+            }
+            conexion.CerrarConexion();
+            return datos;
+        }
+        public List<string> Btn_PU_Primero()
+        {
+            List<string> datos = new List<string>();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "Btn_PU_Primero";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+
+            if (leer.Read())
+            {
+                datos.Add(leer.GetString("IdUsuario"));
+                datos.Add(leer.GetString("DescripcionTipoUser"));
+                datos.Add(leer.GetString("CuentaUsuario"));
+                datos.Add(leer.GetString("NombreUsuario"));
+                datos.Add(leer.GetString("ApellidoUsuario"));
+                datos.Add(leer.GetString("PerProductos"));
+                datos.Add(leer.GetString("PerIngresos"));
+                datos.Add(leer.GetString("PerSalidas"));
+                datos.Add(leer.GetString("PerSolicitudes"));
+                datos.Add(leer.GetString("PerReportes"));
+                datos.Add(leer.GetString("PerUsuarios"));
+            }
+            conexion.CerrarConexion();
+            return datos;
+        }
+        public List<string> Btn_PU_Anterior(int IdUsuario)
+        {
+            List<string> datos = new List<string>();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "Btn_PU_Anterior";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("_IdUsuario", IdUsuario);
+            leer = comando.ExecuteReader();
+
+            if (leer.Read())
+            {
+                datos.Add(leer.GetString("IdUsuario"));
+                datos.Add(leer.GetString("DescripcionTipoUser"));
+                datos.Add(leer.GetString("CuentaUsuario"));
+                datos.Add(leer.GetString("NombreUsuario"));
+                datos.Add(leer.GetString("ApellidoUsuario"));
+                datos.Add(leer.GetString("PerProductos"));
+                datos.Add(leer.GetString("PerIngresos"));
+                datos.Add(leer.GetString("PerSalidas"));
+                datos.Add(leer.GetString("PerSolicitudes"));
+                datos.Add(leer.GetString("PerReportes"));
+                datos.Add(leer.GetString("PerUsuarios"));
+            }
+            conexion.CerrarConexion();
+            return datos;
+        }
+        public List<string> Btn_PU_Siguiente(int IdUsuario)
+        {
+            List<string> datos = new List<string>();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "Btn_PU_Siguiente";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("_IdUsuario", IdUsuario);
+            leer = comando.ExecuteReader();
+
+            if (leer.Read())
+            {
+                datos.Add(leer.GetString("IdUsuario"));
+                datos.Add(leer.GetString("DescripcionTipoUser"));
+                datos.Add(leer.GetString("CuentaUsuario"));
+                datos.Add(leer.GetString("NombreUsuario"));
+                datos.Add(leer.GetString("ApellidoUsuario"));
+                datos.Add(leer.GetString("PerProductos"));
+                datos.Add(leer.GetString("PerIngresos"));
+                datos.Add(leer.GetString("PerSalidas"));
+                datos.Add(leer.GetString("PerSolicitudes"));
+                datos.Add(leer.GetString("PerReportes"));
+                datos.Add(leer.GetString("PerUsuarios"));
+            }
+            conexion.CerrarConexion();
+            return datos;
+        }
     }
 }

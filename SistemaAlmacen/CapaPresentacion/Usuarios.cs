@@ -145,7 +145,7 @@ namespace CapaPresentacion
                     try
                     {
                         usuarios.Insert_Productos(cboTiposUser.Text, txtCuenta.Text, txtPass.Text, txtDNI.Text, txtNombres.Text, txtApellidos.Text, txtTelefono.Text, txtCorreo.Text, txtDireccion.Text, txtObs.Text);
-                        MessageBox.Show("Datos actualizados", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Usuario Registrado", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         activar(true);
                         CargarForm();
                     }
@@ -180,6 +180,23 @@ namespace CapaPresentacion
         {
             activar(true);
             CargarForm();
+        }
+
+        private void cboTiposUser_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                CN_Usuarios usuarios = new CN_Usuarios();
+                DataTable data = usuarios.MostrarUsuariosTipos();
+
+                cboTiposUser.DisplayMember = "descripciontipouser";
+                cboTiposUser.ValueMember = "idtipouser";
+                cboTiposUser.DataSource = data;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo guardar los datos por: " + ex, "ERROR!!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

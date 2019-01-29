@@ -343,6 +343,7 @@
             this.IngresarNuevoToolStripMenuItem.Name = "IngresarNuevoToolStripMenuItem";
             this.IngresarNuevoToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.IngresarNuevoToolStripMenuItem.Text = "Ingresar/Editar Nuevo";
+            this.IngresarNuevoToolStripMenuItem.Click += new System.EventHandler(this.UsuariosToolStripMenuItem_Click);
             // 
             // EditarPermisosDeUsuarioToolStripMenuItem
             // 
