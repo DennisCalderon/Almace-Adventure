@@ -59,12 +59,15 @@ namespace CapaPresentacion
             ChkControl(false);
             BtnControl(true);
         }
-        private void BarraNav(Boolean x)
+        private void BarraNav1(Boolean x)
         {
             btnPrimero.Enabled = x;
             btnAnterior.Enabled = x;
-            btnUltimo.Enabled = !x;
-            btnSiguiente.Enabled = !x;
+        }
+        private void BarraNav2(Boolean x)
+        {
+            btnUltimo.Enabled = x;
+            btnSiguiente.Enabled = x;
         }
         private void ultimo()
         {
@@ -72,7 +75,7 @@ namespace CapaPresentacion
             datos = usuarios.Btn_PU_Ultimo();
             BarraNavNum = Convert.ToInt32(datos.ElementAt(0));
             VerDatos(datos);
-            BarraNav(true);
+            BarraNav1(true); BarraNav2(false);
         }
 
         private void btnUltimo_Click(object sender, EventArgs e)
@@ -85,7 +88,7 @@ namespace CapaPresentacion
             List<string> datos = new List<string>();
             datos = usuarios.Btn_PU_Primero();
             VerDatos(datos);
-            BarraNav(false);
+            BarraNav1(false); BarraNav2(true);
         }
 
         private void btnAnterior_Click(object sender, EventArgs e)
@@ -94,12 +97,8 @@ namespace CapaPresentacion
             List<string> datos = new List<string>();
             datos = usuarios1.Btn_PU_Anterior(txtID.Text);
             VerDatos(datos);
-            if (Convert.ToInt32(txtID.Text) == 1) { BarraNav(false); }
-            if (Convert.ToInt32(txtID.Text) != 1)
-            {
-                btnUltimo.Enabled = true;
-                btnSiguiente.Enabled = true;
-            }
+            if (Convert.ToInt32(txtID.Text) == 1) { BarraNav1(false); BarraNav2(true); }
+            if (Convert.ToInt32(txtID.Text) != 1) { BarraNav1(true); BarraNav2(true); }
         }
 
         private void btnSiguiente_Click(object sender, EventArgs e)
@@ -108,12 +107,8 @@ namespace CapaPresentacion
             List<string> datos = new List<string>();
             datos = usuarios2.Btn_PU_Siguiente(txtID.Text);
             VerDatos(datos);
-            if (Convert.ToInt32(txtID.Text) == BarraNavNum) { BarraNav(true); }
-            if (Convert.ToInt32(txtID.Text) != BarraNavNum)
-            {
-                btnPrimero.Enabled = true;
-                btnAnterior.Enabled = true;
-            }
+            if (Convert.ToInt32(txtID.Text) == BarraNavNum) { BarraNav1(true); BarraNav2(false); }
+            if (Convert.ToInt32(txtID.Text) != BarraNavNum) { BarraNav1(true); BarraNav2(true); }
         }
         private void ChkControl(Boolean x)
         {
@@ -135,18 +130,34 @@ namespace CapaPresentacion
         {
             BtnControl(false);
             ChkControl(true);
+            BarraNav1(false); BarraNav2(false);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             BtnControl(true);
             ChkControl(false);
+            try
+            {
+                usuarios.Update_Usuarios_Permisos(txtID.Text,chkProductos.Checked, chkIngresos.Checked, chkSalidas.Checked, chkSolicitudes.Checked, chkReportes.Checked, chkUsuarios.Checked);
+                MessageBox.Show("Datos actualizados", "Importante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo editar los datos por: " + ex, "ERROR!!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            if (Convert.ToInt32(txtID.Text) == 1) { BarraNav1(false); BarraNav2(true); }
+            else if(Convert.ToInt32(txtID.Text) == BarraNavNum) { BarraNav1(true); BarraNav2(false); }
+            else { BarraNav1(true); BarraNav2(true); }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             BtnControl(true);
             ChkControl(false);
+            if (Convert.ToInt32(txtID.Text) == 1) { BarraNav1(false); BarraNav2(true); }
+            else if (Convert.ToInt32(txtID.Text) == BarraNavNum) { BarraNav1(true); BarraNav2(false); }
+            else { BarraNav1(true); BarraNav2(true); }
         }
     }
 }

@@ -181,5 +181,22 @@ namespace CapaDatos
             conexion.CerrarConexion();
             return datos;
         }
+        public void Update_Usuarios_Permisos(int IdUsuario, Boolean PerProductos, Boolean PerIngresos, Boolean PerSalidas, Boolean PerSolicitudes, Boolean PerReportes, Boolean PerUsuarios)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "Update_Usuarios_Permisos";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("_IdUsuario", IdUsuario);
+            comando.Parameters.AddWithValue("_PerProductos", PerProductos);
+            comando.Parameters.AddWithValue("_PerIngresos", PerIngresos);
+            comando.Parameters.AddWithValue("_PerSalidas", PerSalidas);
+            comando.Parameters.AddWithValue("_PerSolicitudes", PerSolicitudes);
+            comando.Parameters.AddWithValue("_PerReportes", PerReportes);
+            comando.Parameters.AddWithValue("_PerUsuarios", PerUsuarios);
+
+            comando.ExecuteNonQuery();
+
+            comando.Parameters.Clear();
+        }
     }
 }

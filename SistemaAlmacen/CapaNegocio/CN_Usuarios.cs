@@ -57,5 +57,9 @@ namespace CapaNegocio
             datosUsuarios = usuarios.Btn_PU_Siguiente(Convert.ToInt32(IdUsuario));
             return datosUsuarios;
         }
+        public void Update_Usuarios_Permisos(string IdUsuario, Boolean PerProductos, Boolean PerIngresos, Boolean PerSalidas, Boolean PerSolicitudes, Boolean PerReportes, Boolean PerUsuarios)
+        {
+            usuarios.Update_Usuarios_Permisos(Convert.ToInt32(IdUsuario), PerProductos, PerIngresos, PerSalidas, PerSolicitudes , PerReportes, PerUsuarios);
+        }
     }
 }

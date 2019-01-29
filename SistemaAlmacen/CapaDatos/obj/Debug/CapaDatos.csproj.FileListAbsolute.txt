@@ -21,3 +21,4 @@ C:\Users\denni\OneDrive\Documentos\Repositorios\Almace-Adventure\SistemaAlmacen\
 C:\Users\denni\OneDrive\Documentos\Repositorios\Almace-Adventure\SistemaAlmacen\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
 C:\Users\denni\OneDrive\Documentos\Repositorios\Almace-Adventure\SistemaAlmacen\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\denni\OneDrive\Documentos\Repositorios\Almace-Adventure\SistemaAlmacen\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\denni\OneDrive\Documentos\Repositorios\Almace-Adventure\SistemaAlmacen\CapaDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache
