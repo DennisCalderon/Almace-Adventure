@@ -104,5 +104,15 @@ namespace CapaDatos
 
             comando.Parameters.Clear();
         }
+        public DataTable Read_Productos_Buscar()
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "Read_Productos_Buscar";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            conexion.CerrarConexion();
+            return tabla;
+        }
     }
 }

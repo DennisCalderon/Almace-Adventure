@@ -23,19 +23,17 @@ namespace CapaPresentacion
 
         private void cboTiposUser_MouseClick(object sender, MouseEventArgs e)
         {
+            try
             {
-                try
-                {
-                    DataTable data = usuarios.MostrarUsuariosTipos();
+                DataTable data = usuarios.MostrarUsuariosTipos();
 
-                    cboTiposUser.DisplayMember = "descripciontipouser";
-                    cboTiposUser.ValueMember = "idtipouser";
-                    cboTiposUser.DataSource = data;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("No se pudo guardar los datos por: " + ex, "ERROR!!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                cboTiposUser.DisplayMember = "descripciontipouser";
+                cboTiposUser.ValueMember = "idtipouser";
+                cboTiposUser.DataSource = data;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo guardar los datos por: " + ex, "ERROR!!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         private void VerDatos(List<string> datos)

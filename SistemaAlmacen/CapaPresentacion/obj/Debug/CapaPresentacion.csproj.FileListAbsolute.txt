@@ -53,3 +53,5 @@ C:\Users\denni\OneDrive\Documentos\Repositorios\Almace-Adventure\SistemaAlmacen\
 C:\Users\denni\OneDrive\Documentos\Repositorios\Almace-Adventure\SistemaAlmacen\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 C:\Users\denni\OneDrive\Documentos\Repositorios\Almace-Adventure\SistemaAlmacen\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 C:\Users\denni\OneDrive\Documentos\Repositorios\Almace-Adventure\SistemaAlmacen\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\denni\OneDrive\Documentos\Repositorios\Almace-Adventure\SistemaAlmacen\CapaPresentacion\obj\Debug\CapaPresentacion.Productos_Buscar.resources
+C:\Users\denni\OneDrive\Documentos\Repositorios\Almace-Adventure\SistemaAlmacen\CapaPresentacion\obj\Debug\CapaPresentacion.Productos_Agregar_Solicitud.resources

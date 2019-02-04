@@ -47,5 +47,12 @@ namespace CapaNegocio
         {
             productos.Insert_Productos(NombreCatProd, DescripcionProd, MarcaProd, Convert.ToDouble(PrecioProd.Replace(".", ",")), Convert.ToInt32(StockProd));
         }
+
+        public DataTable Read_Productos_Buscar()
+        {
+            DataTable tabla = new DataTable();
+            tabla = productos.Read_Productos_Buscar();
+            return tabla;
+        }
     }
 }

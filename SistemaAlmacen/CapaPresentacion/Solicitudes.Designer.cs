@@ -28,62 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TextBox1 = new System.Windows.Forms.TextBox();
+            this.txtEstado = new System.Windows.Forms.TextBox();
             this.Label2 = new System.Windows.Forms.Label();
-            this.Button1 = new System.Windows.Forms.Button();
-            this.DateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.btnQuitar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtCantidadItems = new System.Windows.Forms.TextBox();
             this.txtCod = new System.Windows.Forms.TextBox();
             this.Label8 = new System.Windows.Forms.Label();
             this.Label6 = new System.Windows.Forms.Label();
-            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.Label1 = new System.Windows.Forms.Label();
             this.btnUltimo = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnPrimero = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslUser = new System.Windows.Forms.ToolStripStatusLabel();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // TextBox1
+            // txtEstado
             // 
-            this.TextBox1.Enabled = false;
-            this.TextBox1.Location = new System.Drawing.Point(279, 50);
-            this.TextBox1.Name = "TextBox1";
-            this.TextBox1.Size = new System.Drawing.Size(111, 20);
-            this.TextBox1.TabIndex = 55;
-            this.TextBox1.Text = " ";
+            this.txtEstado.Enabled = false;
+            this.txtEstado.Location = new System.Drawing.Point(245, 48);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(99, 20);
+            this.txtEstado.TabIndex = 55;
+            this.txtEstado.Text = " ";
             // 
             // Label2
             // 
             this.Label2.AutoSize = true;
-            this.Label2.Location = new System.Drawing.Point(208, 53);
+            this.Label2.Location = new System.Drawing.Point(193, 51);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(46, 13);
             this.Label2.TabIndex = 54;
             this.Label2.Text = "Estado :";
             // 
-            // Button1
+            // btnEditar
             // 
-            this.Button1.Location = new System.Drawing.Point(315, 98);
-            this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(75, 23);
-            this.Button1.TabIndex = 53;
-            this.Button1.Text = "Anular";
-            this.Button1.UseVisualStyleBackColor = true;
+            this.btnEditar.Location = new System.Drawing.Point(76, 81);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(58, 39);
+            this.btnEditar.TabIndex = 53;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // DateTimePicker1
+            // dtpFecha
             // 
-            this.DateTimePicker1.Enabled = false;
-            this.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateTimePicker1.Location = new System.Drawing.Point(247, 11);
-            this.DateTimePicker1.Name = "DateTimePicker1";
-            this.DateTimePicker1.Size = new System.Drawing.Size(95, 20);
-            this.DateTimePicker1.TabIndex = 52;
+            this.dtpFecha.CustomFormat = "yyyy-MM-dd";
+            this.dtpFecha.Enabled = false;
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFecha.Location = new System.Drawing.Point(76, 48);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtpFecha.Size = new System.Drawing.Size(95, 20);
+            this.dtpFecha.TabIndex = 52;
             // 
             // dgvProductos
             // 
@@ -91,62 +101,66 @@
             this.dgvProductos.AllowUserToDeleteRows = false;
             this.dgvProductos.AllowUserToResizeRows = false;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(12, 137);
+            this.dgvProductos.Location = new System.Drawing.Point(12, 126);
+            this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(418, 224);
+            this.dgvProductos.Size = new System.Drawing.Size(422, 224);
             this.dgvProductos.TabIndex = 51;
             // 
-            // btnEditar
+            // btnQuitar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(446, 233);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
-            this.btnEditar.TabIndex = 50;
-            this.btnEditar.Text = "Quitar Item";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Location = new System.Drawing.Point(441, 226);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(75, 37);
+            this.btnQuitar.TabIndex = 50;
+            this.btnQuitar.Text = "Quitar Item";
+            this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(109, 98);
+            this.btnGuardar.Location = new System.Drawing.Point(140, 81);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(58, 39);
             this.btnGuardar.TabIndex = 49;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(214, 98);
+            this.btnCancelar.Location = new System.Drawing.Point(204, 81);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(58, 39);
             this.btnCancelar.TabIndex = 48;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // txtDescripcion
+            // txtCantidadItems
             // 
-            this.txtDescripcion.Enabled = false;
-            this.txtDescripcion.Location = new System.Drawing.Point(130, 50);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(68, 20);
-            this.txtDescripcion.TabIndex = 47;
-            this.txtDescripcion.Text = " ";
+            this.txtCantidadItems.Enabled = false;
+            this.txtCantidadItems.Location = new System.Drawing.Point(341, 12);
+            this.txtCantidadItems.Name = "txtCantidadItems";
+            this.txtCantidadItems.Size = new System.Drawing.Size(68, 20);
+            this.txtCantidadItems.TabIndex = 47;
+            this.txtCantidadItems.Text = " ";
             // 
             // txtCod
             // 
             this.txtCod.Enabled = false;
-            this.txtCod.Location = new System.Drawing.Point(97, 11);
+            this.txtCod.Location = new System.Drawing.Point(141, 12);
             this.txtCod.Name = "txtCod";
-            this.txtCod.Size = new System.Drawing.Size(52, 20);
+            this.txtCod.Size = new System.Drawing.Size(78, 20);
             this.txtCod.TabIndex = 46;
             this.txtCod.Text = " ";
             // 
             // Label8
             // 
             this.Label8.AutoSize = true;
-            this.Label8.Location = new System.Drawing.Point(26, 53);
+            this.Label8.Location = new System.Drawing.Point(237, 15);
             this.Label8.Name = "Label8";
             this.Label8.Size = new System.Drawing.Size(98, 13);
             this.Label8.TabIndex = 45;
@@ -155,25 +169,26 @@
             // Label6
             // 
             this.Label6.AutoSize = true;
-            this.Label6.Location = new System.Drawing.Point(188, 14);
+            this.Label6.Location = new System.Drawing.Point(17, 51);
             this.Label6.Name = "Label6";
             this.Label6.Size = new System.Drawing.Size(43, 13);
             this.Label6.TabIndex = 44;
             this.Label6.Text = "Fecha :";
             // 
-            // btnNuevo
+            // btnAgregar
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(446, 194);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevo.TabIndex = 43;
-            this.btnNuevo.Text = "Agregar Item";
-            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnAgregar.Location = new System.Drawing.Point(441, 173);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 37);
+            this.btnAgregar.TabIndex = 43;
+            this.btnAgregar.Text = "Agregar Item";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // Label1
             // 
             this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(26, 14);
+            this.Label1.Location = new System.Drawing.Point(89, 15);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(46, 13);
             this.Label1.TabIndex = 42;
@@ -181,70 +196,132 @@
             // 
             // btnUltimo
             // 
-            this.btnUltimo.Location = new System.Drawing.Point(400, 124);
+            this.btnUltimo.Location = new System.Drawing.Point(397, 81);
             this.btnUltimo.Name = "btnUltimo";
-            this.btnUltimo.Size = new System.Drawing.Size(75, 23);
+            this.btnUltimo.Size = new System.Drawing.Size(37, 39);
             this.btnUltimo.TabIndex = 59;
             this.btnUltimo.Text = "| >";
             this.btnUltimo.UseVisualStyleBackColor = true;
-            this.btnUltimo.Visible = false;
+            this.btnUltimo.Click += new System.EventHandler(this.btnUltimo_Click);
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(319, 124);
+            this.btnSiguiente.Location = new System.Drawing.Point(354, 81);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
+            this.btnSiguiente.Size = new System.Drawing.Size(37, 39);
             this.btnSiguiente.TabIndex = 58;
             this.btnSiguiente.Text = ">";
             this.btnSiguiente.UseVisualStyleBackColor = true;
-            this.btnSiguiente.Visible = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // btnAnterior
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(238, 124);
+            this.btnAnterior.Location = new System.Drawing.Point(311, 81);
             this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(75, 23);
+            this.btnAnterior.Size = new System.Drawing.Size(37, 39);
             this.btnAnterior.TabIndex = 57;
             this.btnAnterior.Text = "<";
             this.btnAnterior.UseVisualStyleBackColor = true;
-            this.btnAnterior.Visible = false;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // btnPrimero
             // 
-            this.btnPrimero.Location = new System.Drawing.Point(157, 124);
+            this.btnPrimero.Location = new System.Drawing.Point(268, 81);
             this.btnPrimero.Name = "btnPrimero";
-            this.btnPrimero.Size = new System.Drawing.Size(75, 23);
+            this.btnPrimero.Size = new System.Drawing.Size(37, 39);
             this.btnPrimero.TabIndex = 56;
             this.btnPrimero.Text = "< |";
             this.btnPrimero.UseVisualStyleBackColor = true;
-            this.btnPrimero.Visible = false;
+            this.btnPrimero.Click += new System.EventHandler(this.btnPrimero_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Location = new System.Drawing.Point(12, 81);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(58, 39);
+            this.btnNuevo.TabIndex = 60;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.tsslUser});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 360);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(526, 22);
+            this.statusStrip1.TabIndex = 61;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(143, 17);
+            this.toolStripStatusLabel1.Text = "                          Usuario   :  ";
+            // 
+            // tsslUser
+            // 
+            this.tsslUser.Name = "tsslUser";
+            this.tsslUser.Size = new System.Drawing.Size(30, 17);
+            this.tsslUser.Text = "User";
+            // 
+            // txtUser
+            // 
+            this.txtUser.Enabled = false;
+            this.txtUser.Location = new System.Drawing.Point(415, 48);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(99, 20);
+            this.txtUser.TabIndex = 63;
+            this.txtUser.Text = " ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(363, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 62;
+            this.label3.Text = "Usuario :";
             // 
             // Solicitudes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 375);
+            this.ClientSize = new System.Drawing.Size(526, 382);
+            this.Controls.Add(this.txtUser);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnUltimo);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.btnPrimero);
-            this.Controls.Add(this.TextBox1);
+            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.Label2);
-            this.Controls.Add(this.Button1);
-            this.Controls.Add(this.DateTimePicker1);
-            this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.dtpFecha);
+            this.Controls.Add(this.dgvProductos);
+            this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtCantidadItems);
             this.Controls.Add(this.txtCod);
             this.Controls.Add(this.Label8);
             this.Controls.Add(this.Label6);
-            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.Label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Solicitudes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Solicitudes";
+            this.Load += new System.EventHandler(this.Solicitudes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,23 +329,29 @@
 
         #endregion
 
-        internal System.Windows.Forms.TextBox TextBox1;
+        internal System.Windows.Forms.TextBox txtEstado;
         internal System.Windows.Forms.Label Label2;
-        internal System.Windows.Forms.Button Button1;
-        internal System.Windows.Forms.DateTimePicker DateTimePicker1;
-        internal System.Windows.Forms.DataGridView dgvProductos;
         internal System.Windows.Forms.Button btnEditar;
+        internal System.Windows.Forms.DateTimePicker dtpFecha;
+        internal System.Windows.Forms.DataGridView dgvProductos;
+        internal System.Windows.Forms.Button btnQuitar;
         internal System.Windows.Forms.Button btnGuardar;
         internal System.Windows.Forms.Button btnCancelar;
-        internal System.Windows.Forms.TextBox txtDescripcion;
+        internal System.Windows.Forms.TextBox txtCantidadItems;
         internal System.Windows.Forms.TextBox txtCod;
         internal System.Windows.Forms.Label Label8;
         internal System.Windows.Forms.Label Label6;
-        internal System.Windows.Forms.Button btnNuevo;
+        internal System.Windows.Forms.Button btnAgregar;
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.Button btnUltimo;
         internal System.Windows.Forms.Button btnSiguiente;
         internal System.Windows.Forms.Button btnAnterior;
         internal System.Windows.Forms.Button btnPrimero;
+        internal System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel tsslUser;
+        internal System.Windows.Forms.TextBox txtUser;
+        internal System.Windows.Forms.Label label3;
     }
 }

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CN_Login.cs" />
     <Compile Include="CN_Productos.cs" />
+    <Compile Include="CN_Solicitudes.cs" />
     <Compile Include="CN_Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
